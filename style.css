@@ -43,21 +43,37 @@ body {
     padding-right: 1em;
 }
 
-.search-form input[type=text] {
+.search-form form {
+    position: relative;
     width: 100%;
+}
+
+.search-form input[type=text] {
+    width: 90%;
     height: 4em;
     border: none;
     border-radius: 12px;
     background-color: #f9f9f9;
     padding-left: 2em;
+    flex-grow: 2;
 }
 
-.search-form input[type=text]:after {
-    content: '';
-    width: 80px;
-    height: 80px;
+.search-form input[type=text]:focus {
+    outline: none;
+}
+
+.search-form .btn-search {
+    width: 70px;
+    height: 100%;
     background-color: var(--green);
     position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
 }
 
 .header .nav-menu {

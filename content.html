@@ -1,0 +1,81 @@
+<div class="content">
+    <div class="left">
+        <div class="flex flex-box">
+            <div class="slider-box">
+                <img src="img/poster1.png">
+                <div class="overlay">
+                    <span class="title">IkaNesia Promo</span>
+                </div>
+            </div>
+            <div class="slider-box">
+                <img src="img/poster2.png">
+                <div class="overlay">
+                    <span class="title">IkaNesia Promo 2</span>
+                </div>
+            </div>
+            <div class="slider-box">
+                <img src="img/poster3.png">
+                <div class="overlay">
+                    <span class="title">IkaNesia Promo 3</span>
+                </div>
+            </div>
+            <div class="slider-pagging">
+                <span class="pagging-shape" onclick="currentDiv(1)"></span>
+                <span class="pagging-shape" onclick="currentDiv(2)"></span>
+                <span class="pagging-shape" onclick="currentDiv(3)"></span>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        BB
+    </div>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    autoPlaySlide();
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("slider-box");
+        var dots = document.getElementsByClassName("pagging-shape");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    function autoPlaySlide() {
+        var i;
+        var x = document.getElementsByClassName("slider-box");
+        var dots = document.getElementsByClassName("pagging-shape");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(autoPlaySlide, 5000);
+    }
+</script>

@@ -4,12 +4,21 @@
     <title>IkaNesia</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <div class="logo">IkanNesia</div>
-        <div class="search-form">
+    <div class="header" id="header">
+        <div class="logo">IkanNesia
+            <button class="toggle-search" onclick="showSearch()" id="toggle-search">
+                <ion-icon name="search" ></ion-icon>
+            </button>
+            <button class="toggle-search" onclick="showSearch()" id="toggle-close-search">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </div>
+        <div class="search-form" id="search">
             <form>
                 <input type="text" placeholder="Cari Ikan..">
                 <span class="btn-search"><img src="img/ico/search.svg" width="24px"></span>
@@ -30,3 +39,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let xtoggle = false;
+        let searchBlock = document.getElementById("search");
+        document.getElementById("toggle-close-search").style.display = "none";
+
+        function showSearch() {
+            if (!xtoggle) {
+                searchBlock.style.display = "block";
+                document.getElementById("header").style.height = "10em";
+                document.getElementById("toggle-search").style.display = "none";
+                document.getElementById("toggle-close-search").style.display = "block";
+                xtoggle = true;
+            } else {
+                searchBlock.style.display = "none";
+                document.getElementById("header").style.height = "5em";
+                document.getElementById("toggle-search").style.display = "block";
+                document.getElementById("toggle-close-search").style.display = "none";
+                xtoggle = false;
+            }
+        }
+    </script>

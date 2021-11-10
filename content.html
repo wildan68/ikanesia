@@ -28,9 +28,57 @@
 
         <h3>Terbaru, nih</h3>
         <hr width="200px">
+        <br>
+        <div class="splide" style="width: 40em">
+            <div class="splide__track">
+                <ul class="splide__list" style="width: 100%;height: 25em;">
+                    <li class="splide__slide">
+                        <div class="box-item">
+                            <div class="image">
+                                <img src="img/ikan1.png">
+                            </div>
+                            <h4>Ikan 11</h4>
+                            <h3>Rp. 99.999,-</h3>
 
+                            <div class="flex flex-box-button">
+                                <button class="fav"><img src="img/ico/heart.svg" style="width: 24px;"></button>
+                                <button class="buy">Beli Ikan</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="box-item">
+                            <div class="image">
+                                <img src="img/ikan2.png">
+                            </div>
+                            <h4>Ikan 11</h4>
+                            <h3>Rp. 97.999,-</h3>
 
-        <div class="flex flex-news">
+                            <div class="flex flex-box-button">
+                                <button class="fav"><img src="img/ico/heart.svg" style="width: 24px;"></button>
+                                <button class="buy">Beli Ikan</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="box-item">
+                            <div class="image">
+                                <img src="img/ikan3.png">
+                            </div>
+                            <h4>Ikan 11</h4>
+                            <h3>Rp. 96.999,-</h3>
+
+                            <div class="flex flex-box-button">
+                                <button class="fav"><img src="img/ico/heart.svg" style="width: 24px;"></button>
+                                <button class="buy">Beli Ikan</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--<div class="flex flex-news">
             <button class="arrow">
                 <ion-icon name="chevron-back"></ion-icon>
             </button>
@@ -53,7 +101,7 @@
             <button class="arrow">
                 <ion-icon name="chevron-forward"></ion-icon>
             </button>
-        </div>
+        </div>-->
     </div>
     <div class="right">
         <h3>AAA</h3>
@@ -62,6 +110,15 @@
 </div>
 
 <script>
+    var splide = new Splide('.splide', {
+        type: 'loop',
+        perPage: 2,
+        perMove: 1,
+        height: '20em',
+    });
+
+    splide.mount();
+
     var slideIndex = 1;
     showDivs(slideIndex);
     autoPlaySlide();

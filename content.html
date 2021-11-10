@@ -29,9 +29,9 @@
         <h3>Terbaru, nih</h3>
         <hr width="200px">
         <br>
-        <div class="splide" style="width: 40em">
+        <div class="splide splide_news">
             <div class="splide__track">
-                <ul class="splide__list" style="width: 100%;height: 25em;">
+                <ul class="splide__list splide_news_list" style="height: 23em; padding-top: 2em;">
                     <li class="splide__slide">
                         <div class="box-item">
                             <div class="image">
@@ -51,7 +51,7 @@
                             <div class="image">
                                 <img src="img/ikan2.png">
                             </div>
-                            <h4>Ikan 11</h4>
+                            <h4>Ikan 12</h4>
                             <h3>Rp. 97.999,-</h3>
 
                             <div class="flex flex-box-button">
@@ -65,7 +65,7 @@
                             <div class="image">
                                 <img src="img/ikan3.png">
                             </div>
-                            <h4>Ikan 11</h4>
+                            <h4>Ikan 13</h4>
                             <h3>Rp. 96.999,-</h3>
 
                             <div class="flex flex-box-button">
@@ -110,9 +110,16 @@
 </div>
 
 <script>
+    let page = 3;
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
+    if (mediaQuery.matches) {
+        page = 2;
+    } else {
+        page = 3;
+    }
     var splide = new Splide('.splide', {
         type: 'loop',
-        perPage: 2,
+        perPage: page,
         perMove: 1,
         height: '20em',
     });

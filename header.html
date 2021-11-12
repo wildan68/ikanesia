@@ -14,11 +14,14 @@
 <body>
     <div class="header" id="header">
         <div class="logo">IkanNesia
-            <button class="toggle-search" onclick="showSearch()" id="toggle-search">
+            <button class="toggle search" onclick="showSearch()" id="toggle-search">
                 <ion-icon name="search" ></ion-icon>
             </button>
-            <button class="toggle-search" onclick="showSearch()" id="toggle-close-search">
+            <button class="toggle search" onclick="showSearch()" id="toggle-close-search">
                 <ion-icon name="close"></ion-icon>
+            </button>
+            <button class="toggle menu" onclick="showMenu()" id="toggle-menu">
+                <ion-icon name="menu"></ion-icon>
             </button>
         </div>
         <div class="search-form" id="search">
@@ -27,18 +30,31 @@
                 <button class="btn-search" v-on:click="click('hai '+name)"><img src="img/ico/search.svg" width="24px"></button>
             </form>
         </div>
-        <div class="nav-menu">
+        <div class="nav-menu-overlay" id="nav-menu-overlay"></div>
+        <div class="nav-menu" id="nav-menu">
             <div class="menu-list" id="active">
-                Home
+                <div class="icon-menu">
+                    <ion-icon name="home"></ion-icon>
+                </div>
+                <div class="title-menu">Home</div>
             </div>
             <div class="menu-list">
-                Favorit
+                <div class="icon-menu">
+                    <ion-icon name="heart"></ion-icon>
+                </div>
+                <div class="title-menu">Favorit</div>
             </div>
             <div class="menu-list">
-                Pembayaran
+                <div class="icon-menu">
+                    <ion-icon name="chatbox-ellipses"></ion-icon>
+                </div>
+                <div class="title-menu">Chat</div>
             </div>
             <div class="menu-list">
-                Profil
+                <div class="icon-menu">
+                    <ion-icon name="person"></ion-icon>
+                </div>
+                <div class="title-menu">Profil</div>
             </div>
         </div>
     </div>
@@ -62,6 +78,26 @@
                 document.getElementById("toggle-search").style.display = "block";
                 document.getElementById("toggle-close-search").style.display = "none";
                 xtoggle = false;
+            }
+        }
+
+        function showMenu() {
+            document.getElementById("nav-menu").style.display = "flex";
+            document.getElementById("nav-menu-overlay").style.display = "block";
+            document.getElementById("nav-menu").style.animation = "navMenuShow 0.5s linear";
+        }
+
+        document.getElementById("nav-menu-overlay").addEventListener("click", closeMenu);
+
+        function closeMenu() {
+            document.getElementById("nav-menu").style.animation = "navMenuClose 0.5s linear";
+
+            var x = setInterval(close, 450);
+
+            function close() {
+                document.getElementById("nav-menu").style.display = "none";
+                document.getElementById("nav-menu-overlay").style.display = "none";
+                clearInterval(x);
             }
         }
     </script>

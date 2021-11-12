@@ -7,6 +7,7 @@
     --light-black: #64748B;
     --red: #F87171;
     --light-white: #E5E5E5;
+    --yellow: rgb(241, 237, 2);
 }
 
 * {
@@ -16,6 +17,7 @@
 body {
     margin: 0;
     background-color: var(--white);
+    color: var(--black);
 }
 
 button {
@@ -270,8 +272,8 @@ button {
 
 .content .right {
     height: 100%;
-    background-color: #F87171;
     flex: 1;
+    width: 100%;
 }
 
 .flex.flex-box {
@@ -483,6 +485,78 @@ button {
     padding-left: 5%;
 }
 
+.flex.flex-item-box {
+    height: auto;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex.flex-item-box>div {
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.flex.flex-item-box .box-item-2 {
+    width: 15em;
+    height: 6em;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 0.5em;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.25);
+}
+
+.flex.flex-item-box .box-item-2>div {
+    margin-right: 1em;
+}
+
+.flex.flex-item-box .img {
+    width: 5.5em;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.flex.flex-item-box .info {
+    font-size: 14px;
+    position: relative;
+}
+
+.flex.flex-item-box .info .price {
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 600;
+}
+
+.flex.flex-item-box .rating {
+    font-size: 8px;
+    color: var(--red);
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    text-align: center;
+}
+
+.flex.flex-item-box .rating ion-icon {
+    font-size: 24px;
+}
+
+.flex.flex-item-box .info a {
+    text-decoration: none;
+    color: var(--white);
+    display: inline-block;
+    padding: 0.5em;
+    background-color: var(--green);
+    font-size: 14px;
+    border-radius: 7px;
+    margin-top: 1.5em;
+}
+
 @media (max-width: 768px) {
     .content {
         display: block;
@@ -505,5 +579,50 @@ button {
     }
     .box-item {
         width: 11em;
+    }
+    .flex.flex-item-box>div {
+        margin-right: 0.5em;
+        margin-bottom: 1em;
+    }
+    .flex.flex-item-box .box-item-2 {
+        width: auto;
+        height: 7em;
+        background-color: var(--white);
+        border-radius: 12px;
+        padding: 0.5em;
+        display: flex;
+        position: relative;
+    }
+    .flex.flex-item-box .img {
+        width: 4.5em;
+        height: 70%;
+    }
+    .flex.flex-item-box .box-item-2>div {
+        margin-right: 0.5em;
+    }
+    .flex.flex-item-box .info {
+        font-size: 12px;
+    }
+    .flex.flex-item-box .rating {
+        font-size: 8px;
+        right: 23%;
+        top: 37%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .flex.flex-item-box .info a {
+        text-decoration: none;
+        color: var(--white);
+        display: inline-block;
+        padding: 0.5em;
+        background-color: var(--green);
+        font-size: 14px;
+        border-radius: 7px;
+        margin-top: 3em;
+        margin-left: -5.7em;
+        width: 150%;
+        display: flex;
+        justify-content: center;
     }
 }

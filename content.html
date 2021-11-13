@@ -35,7 +35,7 @@
                     <li class="splide__slide">
                         <div class="box-item">
                             <div class="image">
-                                <img src="img/ikan1.png">
+                                <img class="lazy" data-src="img/ikan1.png">
                             </div>
                             <h4>Ikan 11</h4>
                             <h3>Rp. 99.999,-</h3>
@@ -49,7 +49,7 @@
                     <li class="splide__slide">
                         <div class="box-item">
                             <div class="image">
-                                <img src="img/ikan2.png">
+                                <img class="lazy" data-src="img/ikan2.png">
                             </div>
                             <h4>Ikan 12</h4>
                             <h3>Rp. 97.999,-</h3>
@@ -63,7 +63,7 @@
                     <li class="splide__slide">
                         <div class="box-item">
                             <div class="image">
-                                <img src="img/ikan3.png">
+                                <img class="lazy" data-src="img/ikan3.png">
                             </div>
                             <h4>Ikan 13</h4>
                             <h3>Rp. 96.999,-</h3>
@@ -104,7 +104,8 @@
         </div>-->
     </div>
     <div class="right">
-        <h3>Paling banyak dicari</h3>
+        <div class="flex flex-title">
+            <h3>Paling banyak dicari</h3> <a href="#">Lihat Semua</a></div>
         <hr width="230px">
         <div class="flex flex-item-box">
             <div class="box-item-2">
@@ -151,7 +152,8 @@
             </div>
         </div>
 
-        <h3>Cupang</h3>
+        <div class="flex flex-title">
+            <h3>Cupang</h3> <a href="#">Lihat Semua</a></div>
         <hr width="150px">
         <div class="flex flex-item-box">
             <div class="box-item-2">
@@ -277,4 +279,8 @@
         dots[slideIndex - 1].className += " active";
         setTimeout(autoPlaySlide, 5000);
     }
+    var lazyLoadInstance = new LazyLoad({
+        // Your custom settings go here
+    });
+    lazyLoadInstance.update();
 </script>

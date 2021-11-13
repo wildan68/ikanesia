@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
+
 </head>
 
 <body>
@@ -61,6 +63,11 @@
 
     <script src="header.js"></script>
     <script>
+        var lazyLoadInstance = new LazyLoad({
+            // Your custom settings go here
+        });
+        lazyLoadInstance.update();
+
         let xtoggle = false;
         let searchBlock = document.getElementById("search");
         document.getElementById("toggle-close-search").style.display = "none";

@@ -26,6 +26,11 @@ button {
     outline: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .flex {
     display: flex;
 }
@@ -352,7 +357,27 @@ button {
 .content h3 {
     margin-left: 5%;
     color: var(--black);
-    margin-bottom: -5px;
+    margin-bottom: -0.5em;
+    flex: 1.8;
+}
+
+.flex.flex-title {
+    align-items: center;
+    width: 100%;
+}
+
+.flex.flex-title a {
+    color: var(--green);
+    justify-content: flex-end;
+    flex: 1;
+    align-items: flex-end;
+    margin-top: 0em;
+    padding: 1em;
+    display: inline-block;
+}
+
+.flex.flex-title a:hover {
+    background-color: var(--light-white);
 }
 
 .content hr {
@@ -443,7 +468,8 @@ button {
 
 .flex.flex-box-button {
     width: 90%;
-    margin-top: 1.3em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
 }
 
 .flex.flex-box-button>button {
